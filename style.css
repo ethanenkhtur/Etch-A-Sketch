@@ -6,11 +6,13 @@
 }
 
 .cell {
-  width: calc(
-    100% / 17
-  ); /* Set cell width to occupy 1/16th of container width */
-  height: calc(
-    100% / 16
-  ); /* Set cell height to occupy 1/16th of container height */
   border: 1px solid black;
+}
+
+/* .cell:hover {
+  background-color: yellow;
+} */
+
+.gridSizeButton {
+  padding: 10px;
 }
