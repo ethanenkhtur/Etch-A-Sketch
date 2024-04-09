@@ -3,10 +3,13 @@
   flex-wrap: wrap;
   width: 600px;
   height: 600px;
+  border: 2px solid black;
 }
 
 .cell {
-  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  border: 0.5px solid black;
 }
 
 /* .cell:hover {

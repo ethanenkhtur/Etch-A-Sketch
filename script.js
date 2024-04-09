@@ -3,14 +3,21 @@ const gridSizeButton = document.querySelector(".gridSizeButton");
 let gridSize = 16;
 
 function createGrid(size) {
-  container.innerHTML = "";
+  // resetting grid
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
 
   for (let i = 0; i < size * size; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
 
-    cell.style.width = "calc(100% / " + (size + 1) + ")";
-    cell.style.height = "calc(100% / " + (size + 1) + ")";
+    // Cell size
+    const cellSize = 100 / size;
+    cell.style.width = `calc(${cellSize}% - 1px)`; // Adjust for borders
+    cell.style.height = `calc(${cellSize}% - 1px)`;
+
+    // cell color change when hovered
     cell.addEventListener("mouseenter", () => {
       cell.style.backgroundColor = "yellow";
     });
@@ -31,6 +38,8 @@ gridSizeButton.addEventListener("click", () => {
   if (gridSize >= 1 && gridSize <= 100) {
     createGrid(gridSize);
   } else {
-    alert("Enter a size number between 1 and 100");
+    alert("Please, enter a number between 1 and 100");
+    gridSize = parseInt(window.prompt("Enter a grid size: "));
+    createGrid(gridSize);
   }
 });
