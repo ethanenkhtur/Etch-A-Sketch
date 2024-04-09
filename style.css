@@ -1,8 +1,16 @@
-.container > div {
+.container {
   display: flex;
-  padding: 10%;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
 }
 
-body {
-  background-color: yellow;
+.cell {
+  width: calc(
+    100% / 17
+  ); /* Set cell width to occupy 1/16th of container width */
+  height: calc(
+    100% / 16
+  ); /* Set cell height to occupy 1/16th of container height */
+  border: 1px solid black;
 }
